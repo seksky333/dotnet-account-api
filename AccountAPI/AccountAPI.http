@@ -1,4 +1,4 @@
-@AccountAPI_HostAddress = http://localhost:5032
+@AccountAPI_HostAddress = http://localhost:5194
 
 GET {{AccountAPI_HostAddress}}/weatherforecast/
 Accept: application/json

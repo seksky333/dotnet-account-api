@@ -6,3 +6,5 @@ bin/
 .config/
 
 obj/
+
+AccountAPI/.vs/
