@@ -8,3 +8,6 @@ bin/
 obj/
 
 AccountAPI/.vs/
+AccountAPI/appsettings.Development.json
+
+AccountAPI/appsettings.json
