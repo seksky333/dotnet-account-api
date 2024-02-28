@@ -7,7 +7,7 @@ namespace AccountAPI.Controllers;
 
 [ApiController]
 [Route("/")]
-public class AccountController : ControllerBase
+public class UserController : ControllerBase
 {
     [HttpPost("logout")]
     [Authorize]

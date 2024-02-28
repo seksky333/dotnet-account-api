@@ -7,9 +7,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseInMemoryDatabase("AccountDb"));
-
+// builder.Services.AddDbContext<ApplicationDbContext>(
+//     options => options.UseInMemoryDatabase("AccountDb"));
 
 var connectionString = builder.Configuration.GetConnectionString("AccountDB") ?? string.Empty;
 if (connectionString is null)
@@ -22,6 +21,7 @@ new DiService().ConfigureServices(services: builder.Services, connectionString);
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
