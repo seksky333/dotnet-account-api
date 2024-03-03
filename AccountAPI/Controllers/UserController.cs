@@ -20,6 +20,14 @@ public class UserController : ControllerBase
             await signInManager.SignOutAsync();
             return Ok();
         }
-        return NoContent();
+
+        return Unauthorized();
+    }
+
+    [HttpGet("auth")]
+    [Authorize]
+    public OkResult Authenticate()
+    {
+        return Ok();
     }
 }
